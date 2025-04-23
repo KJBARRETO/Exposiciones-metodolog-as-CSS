@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Modular</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="bg-success text-white text-center py-4">
+    <h2>CSS Modular</h2>
+  </header>
+
+  <main class="container mt-4">
+    <section class="mb-4">
+      <h4>¿Qué es CSS Modular?</h4>
+      <p>CSS Modular es una forma de organizar nuestros estilos CSS para que sean más fáciles de mantener y reutilizar. Es como tener una caja de herramientas donde cada herramienta tiene su propio lugar.</p>
+      <div class="text-center">
+        <img src="./img/ejemplo_CSS_Modular.png" class="img-fluid rounded mb-3" alt="Ejemplo de CSS Modular" style="max-width: 80%;">
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h4>¿Por qué es importante?</h4>
+      <ul>
+        <li>Evita que los estilos se mezclen entre sí</li>
+        <li>Facilita el trabajo en equipo</li>
+        <li>Hace más fácil encontrar y arreglar errores</li>
+        <li>Permite reutilizar código</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h4>Ejemplo Básico</h4>
+      <p>Imagina que tenemos un botón. En lugar de escribir todos los estilos en un solo archivo, podemos crear un archivo específico para botones:</p>
+      <div class="row">
+        <div class="col-md-6">
+          <pre><code>/* button.css */
+.boton {
+  color: white;
+  background: blue;
+  padding: 10px;
+}</code></pre>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-primary">Botón Ejemplo</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h4>Ventajas para Estudiantes</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Organización</h5>
+              <p class="card-text">Es más fácil encontrar tus estilos cuando están organizados por componentes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Aprendizaje</h5>
+              <p class="card-text">Te ayuda a entender mejor cómo funcionan los componentes en CSS.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h4>Consejos para Empezar</h4>
+      <ol>
+        <li>Empieza con componentes pequeños (botones, tarjetas)</li>
+        <li>Usa nombres descriptivos para tus clases</li>
+        <li>Mantén tus archivos CSS organizados por tipo de componente</li>
+        <li>No tengas miedo de experimentar y cometer errores</li>
+      </ol>
+    </section>
+
+    <section class="mb-4">
+      <h4>Ejemplo Práctico</h4>
+      <p>Aquí hay un ejemplo simple de cómo podrías estructurar tus archivos CSS:</p>
+      <pre><code>css/
+  ├── botones.css
+  ├── tarjetas.css
+  ├── navegacion.css
+  └── estilos.css</code></pre>
+    </section>
+
+    <section class="mb-4">
+      <h4>Comparación: Antes y Después</h4>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header bg-danger text-white">
+              Antes (CSS Normal)
+            </div>
+            <div class="card-body">
+              <pre><code>/* Un solo archivo grande */
+.boton { ... }
+.tarjeta { ... }
+.navegacion { ... }
+.footer { ... }
+/* ¡Todo mezclado! */</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              Después (CSS Modular)
+            </div>
+            <div class="card-body">
+              <pre><code>/* Archivos separados */
+/* botones.css */
+.boton { ... }
+
+/* tarjetas.css */
+.tarjeta { ... }
+
+/* navegacion.css */
+.navegacion { ... }</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h4>Ejercicio Práctico</h4>
+      <p>Intenta crear estos componentes modulares:</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Botón</h5>
+              <pre><code>.mi-boton {
+  padding: 10px;
+  border-radius: 5px;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Tarjeta</h5>
+              <pre><code>.mi-tarjeta {
+  border: 1px solid #ccc;
+  padding: 15px;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Navegación</h5>
+              <pre><code>.mi-nav {
+  display: flex;
+  list-style: none;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-4">
+      <h4>Recursos Adicionales</h4>
+      <ul>
+        <li><a href="https://www.w3schools.com/css/" target="_blank">W3Schools - CSS Tutorial</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">MDN Web Docs - CSS</a></li>
+        <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3">
+    <small>Exposición realizada por estudiantes de la universidad</small>
+  </footer>
+</body>
+</html>
