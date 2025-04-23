@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITCSS: Buenas prácticas CSS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="bg-dark text-white text-center py-4">
+    <h2>ITCSS: Inverted Triangle CSS</h2>
+    <p class="lead">Organiza tu CSS de forma escalable y mantenible</p>
+  </header>
+
+  <main class="container mt-4">
+  
+    <section class="mb-4 text-center">
+      <h4>¿Qué es ITCSS?</h4>
+      <p>
+       ITCSS (Inverted Triangle CSS) es una metodología de organización y estructura de CSS diseñada para gestionar de manera escalable y eficiente proyectos grandes, colaborativos y complejos. Su objetivo principal es organizar los estilos desde los más generales hasta los más específicos, siguiendo un enfoque de pirámide invertida. Este modelo permite que los estilos base y globales se definan primero, mientras que las reglas más específicas y locales se aplican más tarde, creando una jerarquía que evita la sobrescritura y mejora la mantenibilidad del código.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h4>¿Por qué usar ITCSS?</h4>
+      <ul class="list-group">
+        <li class="list-group-item">Evita estilos desorganizados y sobreescrituras innecesarias.</li>
+        <li class="list-group-item">Facilita la colaboración en equipo.</li>
+        <li class="list-group-item">Mejora el rendimiento y mantenimiento del código CSS.</li>
+        <li class="list-group-item">Fomenta la reutilización y consistencia visual.</li>
+      </ul>
+    </section>
+
+    <section class="mb-5">
+      <div class="row align-items-center">
+    
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+          <h4>Visualiza la estructura ITCSS</h4>
+          <img src="img/triangle.png" alt="Estructura ITCSS" class="img-fluid my-3" style="max-height: 300px;">
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="text-center mb-4">Capas de ITCSS</h4>
+          <div class="layer-box"><strong>1. Settings:</strong> Variables globales como colores, fuentes, etc.</div>
+          <div class="layer-box"><strong>2. Tools:</strong> Funciones, mixins (Sass), utilidades globales.</div>
+          <div class="layer-box"><strong>3. Generic:</strong> Reset CSS, normalize, reglas universales.</div>
+          <div class="layer-box"><strong>4. Elements:</strong> Estilos para etiquetas HTML (`h1`, `p`, `a`, etc).</div>
+          <div class="layer-box"><strong>5. Objects:</strong> Estructuras sin estilos visuales, como `.o-layout`, `.o-media`.</div>
+          <div class="layer-box"><strong>6. Components:</strong> Botones, tarjetas, menús, etc.</div>
+          <div class="layer-box"><strong>7. Trumps:</strong> Clases utilitarias que sobrescriben reglas anteriores (`.text-center`, `.mt-5`).</div>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section class="mb-5">
+      <h4 class="text-center mb-3">Ejemplo en código</h4>
+      <pre class="bg-light p-3 rounded shadow-sm"><code>/* SETTINGS */
+:root {
+  --primary-color: #0d6efd;
+}
+
+/* TOOLS */
+/* (Ejemplo de mixin en Sass) */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* GENERIC */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ELEMENTS */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* OBJECTS */
+.o-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* COMPONENTS */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.3rem;
+}
+
+/* TRUMPS */
+.text-center {
+  text-align: center;
+}</code></pre>
+    </section>
+
+    <section class="mb-5 text-center">
+      <h4>Ejemplo interactivo</h4>
+      <p>Haz clic para aplicar una clase Trump que sobrescribe estilos:</p>
+      <button id="demoBtn" class="btn btn-primary mb-2">Soy un botón</button>
+      <br />
+      <button class="btn btn-outline-danger" onclick="makeDanger()">Aplicar clase Trump</button>
+    </section>
+  </main>
+
+  <footer class="bg-light text-center py-3">
+    <small>Fuentes: itcss.io, smashingmagazine.com | © 2025</small>
+  </footer>
+
+  <script>
+    function makeDanger() {
+      const btn = document.getElementById("demoBtn");
+      btn.className = "btn btn-danger";
+      btn.textContent = "Ahora soy .btn-danger";
+    }
+  </script>
+</body>
+</html>
